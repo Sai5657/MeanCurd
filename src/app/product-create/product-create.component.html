@@ -1,0 +1,49 @@
+<div class="container">
+  <h1>Add New Product</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="saveProduct()" #productForm="ngForm">
+        <div class="form-group">
+          <label for="name">Product Name</label>
+          <input type="text" class="form-control" [(ngModel)]="product.productName" name="productName" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Consumer Name</label>
+          <input type="text" class="form-control" [(ngModel)]="product.consumerName" name="consumerName" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Product Cost</label>
+          <input type="number" class="form-control" [(ngModel)]="product.productCost" name="productCost" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Shipping Cost</label>
+          <input type="number" class="form-control" [(ngModel)]="product.shippingCost" name="shippingCost" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Shipping Address</label>
+          <textarea type="text" class="form-control" [(ngModel)]="product.shippingAddress" name="shippingAddress" required></textarea>
+        </div>
+		<div class="form-group">
+          <label for="name">Phone Number</label>
+          <input type="number" class="form-control" [(ngModel)]="product.phoneNumber" name="phoneNumber" required>
+        </div>
+		<div class="form-group">
+          <label for="name">Status</label>
+          <!--<input type="text" class="form-control" [(ngModel)]="product.productStatus" name="productStatus" required>-->
+		  <select class="form-control"  [(ngModel)]="product.productStatus" name="productStatus" required>
+			<option value="Delivered">Delivered</option>
+			<option value="In-process">In-process</option>
+			<option value="Not Devivered">Not Devivered</option>
+		  </select>
+        </div>
+		<div class="form-group">
+          <label for="name">Date</label>
+          <input type="date" class="form-control" [(ngModel)]="product.date" name="date" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!productForm.form.valid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
